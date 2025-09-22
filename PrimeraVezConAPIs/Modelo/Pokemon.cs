@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using PrimeraVezConAPIs.Modelo.Habilidades;
+using PrimeraVezConAPIs.Modelo.Tipos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +11,14 @@ namespace PrimeraVezConAPIs.Modelo
 {
     internal record class Pokemon
     {
+        [JsonProperty("name")]
         public string Nombre { get; set; }
-        public string Tipo { get; set; }
-        public string[] Habilidades { get; set; }
+
+        [JsonProperty("types")]
+        public List<TiposPokemon> Tipo { get; set; }
+
+        [JsonProperty("abilities")]
+        public List<HabilidadesPokemon> Habilidades { get; set; }
         public List<IndicePokemon> NumPokedex { get; set; }
 
 

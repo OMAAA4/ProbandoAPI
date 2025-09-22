@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PrimeraVezConAPIs.Modelo
+namespace PrimeraVezConAPIs.Modelo.Habilidades
 {
-    internal class InfoVersion
+    internal class HabilidadesPokemon
     {
-        public string name { get; set; }
+
     }
 }

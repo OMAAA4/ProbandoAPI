@@ -11,7 +11,7 @@ namespace PrimeraVezConAPIs.Servicios
 {
     internal class ObtenerPokemon
     {
-        public async Task<Pokemon> GetPokemon(string nombre)
+        public async Task<Pokemon> DatosPokemon(string nombre)
         {
             var Cliente = new HttpClient();
             var url = $"https://pokeapi.co/api/v2/pokemon/{nombre.ToLower()}";
