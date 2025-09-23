@@ -1,4 +1,5 @@
 using PrimeraVezConAPIs.Modelo;
+using PrimeraVezConAPIs.Modelo.Habilidades;
 using PrimeraVezConAPIs.Servicios;
 
 namespace PrimeraVezConAPIs

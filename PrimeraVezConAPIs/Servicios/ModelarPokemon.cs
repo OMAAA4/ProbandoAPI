@@ -13,7 +13,7 @@ namespace PrimeraVezConAPIs.Servicios
         public static BaseModelado DatosPokemon(Pokemon p) => new BaseModelado
         {
             Nombre = p.Nombre,
-            Tipos = p.Tipo?.Select(t => t.tipo.nombre).ToList() ?? [],
+            Tipos =  p.Tipo?.Select(t => t.tipo.nombre).ToList() ?? [],
             Habilidades = p.Habilidades?.Select(h => h.habilidades?.nombre ?? "").ToList() ?? [],
             Pokedex = p.pokedex?.Select(p => p.juego?.nombre ?? "").ToList() ?? [],
         };
