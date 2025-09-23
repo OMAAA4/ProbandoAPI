@@ -3,17 +3,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace PrimeraVezConAPIs.Modelo.Tipos
+namespace PrimeraVezConAPIs.Modelo.IndicesEnJuegos
 {
-    internal class DetalleTiposPokemon
+    internal class DetalleIndicesPokemon
     {
         [JsonProperty("name")]
-        public string nombre { get; set; }
+        public string name { get; set; }
 
         [JsonProperty("url")]
         public string url { get; set; }
+
     }
 }

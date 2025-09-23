@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,11 @@ namespace PrimeraVezConAPIs.Modelo.Habilidades
 {
     internal class DetalleHabilidadesPokemon
     {
+        [JsonProperty("name")]
+        public string nombre {  get; set; }
+
+        [JsonProperty("url")]
+        public string url { get; set; }
+
     }
 }

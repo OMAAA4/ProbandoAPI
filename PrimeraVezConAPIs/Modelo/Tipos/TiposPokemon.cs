@@ -10,9 +10,9 @@ namespace PrimeraVezConAPIs.Modelo.Tipos
     internal class TiposPokemon
     {
         [JsonProperty("slot")]
-        public int slot {  get; set; }
+        public int espacio {  get; set; }
 
         [JsonProperty("type")]
-        public List<DetalleTiposPokemon> tipo { get; set; }
+        public DetalleTiposPokemon tipo { get; set; }
     }
 }
