@@ -13,9 +13,18 @@ namespace PrimeraVezConAPIs
 
         private async void Form1_Load(object sender, EventArgs e)
         {
-            ObtenerPokemon pokemon = new();
-            string nombrePokemon = "Pikachu";
-            var datos = await pokemon.DatosPokemon(nombrePokemon);
+
+            
+        }
+
+        private async void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ObtenerPokemon obtenerPokemon = new();
+            var pokemon = await obtenerPokemon.DatosPokemon(txtNombre.Text);
+            BaseModelado DatosPokemon = ModelarPokemon.DatosPokemon(pokemon);
+
+            label1.Text = DatosPokemon.Nombre;
+            dataGridView1.DataSource = DatosPokemon.Habilidades;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace PrimeraVezConAPIs.Modelo.IndicesEnJuegos
     internal class DetalleIndicesPokemon
     {
         [JsonProperty("name")]
-        public string name { get; set; }
+        public string nombre { get; set; }
 
         [JsonProperty("url")]
         public string url { get; set; }
