@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PrimeraVezConAPIs.Modelo.Habilidades;
 using PrimeraVezConAPIs.Modelo.IndicesEnJuegos;
+using PrimeraVezConAPIs.Modelo.Sprites;
 using PrimeraVezConAPIs.Modelo.Tipos;
 
 namespace PrimeraVezConAPIs.Servicios
@@ -15,5 +16,8 @@ namespace PrimeraVezConAPIs.Servicios
         public List<TiposBase> Tipos { get; set; }
         public List<HabilidadBase> Habilidades { get; set; }
         public List<IndiceBase> Pokedex {  get; set; }
+
+        public Image spriteFrontal {  get; set; }
+        public Image spriteEspalda {  get; set; }
     }
 }

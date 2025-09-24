@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using PrimeraVezConAPIs.Modelo.Habilidades;
 using PrimeraVezConAPIs.Modelo.IndicesEnJuegos;
+using PrimeraVezConAPIs.Modelo.Sprites;
 using PrimeraVezConAPIs.Modelo.Tipos;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,9 @@ namespace PrimeraVezConAPIs.Modelo
 
         [JsonProperty("game_indices")]
         public List<IndicePokemon> pokedex { get; set; }
+
+        [JsonProperty("sprites")]
+        public SpritesPokemon sprites { get; set; }
 
 
     }

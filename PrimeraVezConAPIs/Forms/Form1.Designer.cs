@@ -30,22 +30,22 @@
         {
             txtNombre = new TextBox();
             btnBuscar = new Button();
+            lbBusqueda = new Label();
+            pictureBox1 = new PictureBox();
             label1 = new Label();
-            label2 = new Label();
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(35, 27);
+            txtNombre.Location = new Point(220, 17);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(189, 27);
             txtNombre.TabIndex = 0;
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(253, 26);
+            btnBuscar.Location = new Point(415, 17);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(94, 29);
             btnBuscar.TabIndex = 1;
@@ -53,47 +53,50 @@
             btnBuscar.UseVisualStyleBackColor = true;
             btnBuscar.Click += btnBuscar_Click;
             // 
+            // lbBusqueda
+            // 
+            lbBusqueda.AutoSize = true;
+            lbBusqueda.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbBusqueda.Location = new Point(15, 16);
+            lbBusqueda.Name = "lbBusqueda";
+            lbBusqueda.Size = new Size(199, 25);
+            lbBusqueda.TabIndex = 2;
+            lbBusqueda.Text = "Nombre del Pokémon:";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Orange;
+            pictureBox1.Location = new Point(71, 92);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(377, 365);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(44, 126);
+            label1.Location = new Point(515, 92);
             label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 2;
-            label1.Text = "label1";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(170, 116);
-            label2.Name = "label2";
-            label2.Size = new Size(89, 20);
-            label2.TabIndex = 4;
-            label2.Text = "Habilidades";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(170, 152);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(300, 188);
-            dataGridView1.TabIndex = 5;
+            label1.Size = new Size(67, 20);
+            label1.TabIndex = 4;
+            label1.Text = "Nombre:";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1297, 687);
-            Controls.Add(dataGridView1);
-            Controls.Add(label2);
+            BackColor = Color.Gold;
+            ClientSize = new Size(1180, 687);
             Controls.Add(label1);
+            Controls.Add(pictureBox1);
+            Controls.Add(lbBusqueda);
             Controls.Add(btnBuscar);
             Controls.Add(txtNombre);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -102,8 +105,8 @@
 
         private TextBox txtNombre;
         private Button btnBuscar;
+        private Label lbBusqueda;
+        private PictureBox pictureBox1;
         private Label label1;
-        private Label label2;
-        private DataGridView dataGridView1;
     }
 }

@@ -12,8 +12,7 @@ namespace PrimeraVezConAPIs.Servicios
 {
     internal static class ModelarPokemon
     {
-
-        public static BaseModelado DatosPokemon(Pokemon p) => new BaseModelado
+        public static async Task<BaseModelado> DatosPokemon(Pokemon p) => new BaseModelado
         {
             Nombre = p.Nombre,
             Tipos = p.Tipo?.Select(t => new TiposBase
@@ -34,7 +33,9 @@ namespace PrimeraVezConAPIs.Servicios
                 GameIndex = px.indice,
                 VersionNombre = px.juego?.nombre ?? "",
                 VersionUrl = px.juego?.url ?? ""
-            }).ToList() ?? []
+            }).ToList() ?? [],
+            spriteFrontal = await ObtenerPokemon.DescargarImagen(p.sprites?.spriteFrontal ?? ""),
+            spriteEspalda = await ObtenerPokemon.DescargarImagen(p.sprites?.spriteEspalda ?? "")
         };
 
     }

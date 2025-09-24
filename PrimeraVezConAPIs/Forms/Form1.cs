@@ -20,10 +20,10 @@ namespace PrimeraVezConAPIs
         {
             ObtenerPokemon obtenerPokemon = new();
             var pokemon = await obtenerPokemon.DatosPokemon(txtNombre.Text);
-            BaseModelado DatosPokemon = ModelarPokemon.DatosPokemon(pokemon);
+            BaseModelado DatosPokemon = await ModelarPokemon.DatosPokemon(pokemon);
+            
+            pictureBox1.Image = DatosPokemon.spriteFrontal;
 
-            label1.Text = DatosPokemon.Nombre;
-            dataGridView1.DataSource = DatosPokemon.Habilidades.Select(h => new { h.Nombre, h.Oculta}).ToList();
         }
     }
 }
