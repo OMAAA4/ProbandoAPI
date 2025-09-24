@@ -9,12 +9,10 @@ namespace PrimeraVezConAPIs
         public Form1()
         {
             InitializeComponent();
-
         }
 
         private async void Form1_Load(object sender, EventArgs e)
         {
-
             
         }
 
@@ -25,7 +23,7 @@ namespace PrimeraVezConAPIs
             BaseModelado DatosPokemon = ModelarPokemon.DatosPokemon(pokemon);
 
             label1.Text = DatosPokemon.Nombre;
-            dataGridView1.DataSource = DatosPokemon.Habilidades;
+            dataGridView1.DataSource = DatosPokemon.Habilidades.Select(h => new { h.Nombre, h.Oculta}).ToList();
         }
     }
 }

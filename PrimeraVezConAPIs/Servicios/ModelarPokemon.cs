@@ -1,4 +1,7 @@
 ﻿using PrimeraVezConAPIs.Modelo;
+using PrimeraVezConAPIs.Modelo.Habilidades;
+using PrimeraVezConAPIs.Modelo.IndicesEnJuegos;
+using PrimeraVezConAPIs.Modelo.Tipos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +16,25 @@ namespace PrimeraVezConAPIs.Servicios
         public static BaseModelado DatosPokemon(Pokemon p) => new BaseModelado
         {
             Nombre = p.Nombre,
-            Tipos =  p.Tipo?.Select(t => t.tipo.nombre).ToList() ?? [],
-            Habilidades = p.Habilidades?.Select(h => h.habilidades?.nombre ?? "").ToList() ?? [],
-            Pokedex = p.pokedex?.Select(p => p.juego?.nombre ?? "").ToList() ?? [],
+            Tipos = p.Tipo?.Select(t => new TiposBase
+            {
+                Slot = t.espacio,
+                Nombre = t.tipo?.nombre ?? "",
+                Url = t.tipo?.url ?? ""
+            }).ToList() ?? [],
+            Habilidades = p.Habilidades?.Select(h => new HabilidadBase
+            {
+                Nombre = h.habilidades?.nombre ?? "",
+                Url = h.habilidades?.url ?? "",
+                Oculta = h.Oculta,
+                Slot = h.espacio
+            }).ToList() ?? [],
+            Pokedex = p.pokedex?.Select(px => new IndiceBase
+            {
+                GameIndex = px.indice,
+                VersionNombre = px.juego?.nombre ?? "",
+                VersionUrl = px.juego?.url ?? ""
+            }).ToList() ?? []
         };
 
     }
