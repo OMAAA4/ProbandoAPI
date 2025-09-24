@@ -14,12 +14,19 @@ namespace PrimeraVezConAPIs.Servicios
     {
         public async Task<Pokemon> DatosPokemon(string nombre)
         {
-            using var Cliente = new HttpClient();
-            var url = $"https://pokeapi.co/api/v2/pokemon/{nombre.ToLower()}";
-            var respuesta = await Cliente.GetStringAsync(url);
+            try
+            {
+                using var Cliente = new HttpClient();
+                var url = $"https://pokeapi.co/api/v2/pokemon/{nombre.ToLower()}";
+                var respuesta = await Cliente.GetStringAsync(url);
 
-            var pokemon = JsonConvert.DeserializeObject<Pokemon>(respuesta) ;
-            return pokemon;
+                var pokemon = JsonConvert.DeserializeObject<Pokemon>(respuesta);
+                return pokemon;
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         public static async Task<Image> DescargarImagen(string url)

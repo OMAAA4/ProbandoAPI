@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,10 +10,10 @@ namespace PrimeraVezConAPIs.Modelo.IndicesEnJuegos
 {
     internal class IndicePokemon
     {
-        [JsonPropertyName("game_index")]
+        [JsonProperty("game_index")]
         public int indice { get; set; }
 
-        [JsonPropertyName("version")]
+        [JsonProperty("version")]
         public DetalleIndicesPokemon juego { get; set; }
 
     }
