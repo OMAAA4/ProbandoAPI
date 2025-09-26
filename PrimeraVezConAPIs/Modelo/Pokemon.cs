@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using PrimeraVezConAPIs.Modelo.Estadisticas;
 using PrimeraVezConAPIs.Modelo.Habilidades;
 using PrimeraVezConAPIs.Modelo.IndicesEnJuegos;
 using PrimeraVezConAPIs.Modelo.Sprites;
@@ -28,6 +29,8 @@ namespace PrimeraVezConAPIs.Modelo
         [JsonProperty("sprites")]
         public SpritesPokemon sprites { get; set; }
 
+        [JsonProperty("stats")]
+        public List<EstadisticasPokemon> Estadisticas { get; set; }
 
     }
 }

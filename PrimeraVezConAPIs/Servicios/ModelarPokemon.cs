@@ -2,6 +2,7 @@
 using PrimeraVezConAPIs.Modelo.Habilidades;
 using PrimeraVezConAPIs.Modelo.IndicesEnJuegos;
 using PrimeraVezConAPIs.Modelo.Tipos;
+using PrimeraVezConAPIs.Modelo.Estadisticas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +36,13 @@ namespace PrimeraVezConAPIs.Servicios
                 VersionUrl = px.juego?.url ?? ""
             }).ToList() ?? [],
             spriteFrontal = await ObtenerPokemon.DescargarImagen(p.sprites?.spriteFrontal ?? ""),
-            spriteEspalda = await ObtenerPokemon.DescargarImagen(p.sprites?.spriteEspalda ?? "")
+            spriteEspalda = await ObtenerPokemon.DescargarImagen(p.sprites?.spriteEspalda ?? ""),
+            estadisticas = p.Estadisticas?.Select(e => new EstadisticaBase
+            {
+                nombre = e.estadistica?.nombre ?? "",
+                baseInicio = e?.baseInicio ?? 0,
+                esfuerzo = e?.esfuerzo ?? 0
+            }).ToList() ?? [],
         };
 
     }
