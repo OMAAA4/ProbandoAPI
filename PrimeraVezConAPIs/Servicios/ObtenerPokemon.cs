@@ -7,6 +7,7 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using PrimeraVezConAPIs.Modelo;
 using PrimeraVezConAPIs.Properties;
+using PrimeraVezConAPIs.Modelo.ListaGeneral;
 
 namespace PrimeraVezConAPIs.Servicios
 {
@@ -41,6 +42,23 @@ namespace PrimeraVezConAPIs.Servicios
             else
             {
                 return Resources.no_image;
+            }
+        }
+
+        public static async Task<ListaGeneral> MostrarPokemones()
+        {
+            try
+            {
+                var Cliente = new HttpClient();
+                var url = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1302";
+                var respuesta = await Cliente.GetStringAsync(url);
+
+                var pokemones = JsonConvert.DeserializeObject<ListaGeneral>(respuesta);
+                return pokemones;
+            }
+            catch
+            {
+                return null;
             }
         }
     }

@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PrimeraVezConAPIs.Modelo.ListaGeneral;
 
 namespace PrimeraVezConAPIs.Servicios
 {
@@ -44,6 +45,12 @@ namespace PrimeraVezConAPIs.Servicios
                 esfuerzo = e?.esfuerzo ?? 0
             }).ToList() ?? [],
         };
+
+        public static async Task<BaseModeladoListado> Pokemones(ListaGeneral l) => new BaseModeladoListado
+        {
+            nombre = l.pokemones?.Select(d => d.nombre).ToList() ?? []
+        };
+    
 
     }
 }

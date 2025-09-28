@@ -1,6 +1,7 @@
 using PrimeraVezConAPIs.Modelo;
 using PrimeraVezConAPIs.Modelo.Habilidades;
 using PrimeraVezConAPIs.Servicios;
+using System.Security.Cryptography.X509Certificates;
 
 namespace PrimeraVezConAPIs
 {
@@ -11,8 +12,15 @@ namespace PrimeraVezConAPIs
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
+            BaseModeladoListado pokemones = await ModelarPokemon.Pokemones( await ObtenerPokemon.MostrarPokemones());
+
+            var autoComplete = new AutoCompleteStringCollection();
+            autoComplete.AddRange([.. pokemones.nombre]);
+            txtNombre.AutoCompleteCustomSource = autoComplete;
+            txtNombre.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtNombre.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
         }
 
