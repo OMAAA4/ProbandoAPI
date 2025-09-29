@@ -44,6 +44,8 @@ namespace PrimeraVezConAPIs.Servicios
                 baseInicio = e?.baseInicio ?? 0,
                 esfuerzo = e?.esfuerzo ?? 0
             }).ToList() ?? [],
+            sonidoNuevo = await ObtenerPokemon.Sonidos(p.Sonido?.SonidoNuevo ?? ""),
+            sonidoViejo = await ObtenerPokemon.Sonidos(p.Sonido?.SonidoAntiguo ?? "")
         };
 
         public static async Task<BaseModeladoListado> Pokemones(ListaGeneral l) => new BaseModeladoListado

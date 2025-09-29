@@ -61,5 +61,19 @@ namespace PrimeraVezConAPIs.Servicios
                 return null;
             }
         }
+
+        public static async Task<MemoryStream> Sonidos(string url)
+        {
+            try
+            {
+                using var Cliente = new HttpClient();
+                var bytes = await Cliente.GetByteArrayAsync(url);
+                return new MemoryStream(bytes);
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }

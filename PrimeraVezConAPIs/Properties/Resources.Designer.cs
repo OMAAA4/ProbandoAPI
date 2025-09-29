@@ -69,5 +69,15 @@ namespace PrimeraVezConAPIs.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap speaker_filled_audio_tool {
+            get {
+                object obj = ResourceManager.GetObject("speaker-filled-audio-tool", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

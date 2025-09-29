@@ -2,6 +2,7 @@
 using PrimeraVezConAPIs.Modelo.Estadisticas;
 using PrimeraVezConAPIs.Modelo.Habilidades;
 using PrimeraVezConAPIs.Modelo.IndicesEnJuegos;
+using PrimeraVezConAPIs.Modelo.Sonido;
 using PrimeraVezConAPIs.Modelo.Sprites;
 using PrimeraVezConAPIs.Modelo.Tipos;
 using System;
@@ -31,6 +32,9 @@ namespace PrimeraVezConAPIs.Modelo
 
         [JsonProperty("stats")]
         public List<EstadisticasPokemon> Estadisticas { get; set; }
+
+        [JsonProperty("cries")]
+        public SonidoPokemon Sonido { get; set; }
 
     }
 }

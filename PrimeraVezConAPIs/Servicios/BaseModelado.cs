@@ -21,5 +21,8 @@ namespace PrimeraVezConAPIs.Servicios
 
         public Image spriteFrontal {  get; set; }
         public Image spriteEspalda {  get; set; }
+
+        public MemoryStream sonidoViejo { get; set; }
+        public MemoryStream sonidoNuevo { get; set; }
     }
 }

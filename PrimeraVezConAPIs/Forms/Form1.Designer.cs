@@ -37,6 +37,10 @@
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
+            MSonidoViejo = new Button();
+            label13 = new Label();
+            label5 = new Label();
+            MSonidoNuevo = new Button();
             panel4 = new Panel();
             progressBar6 = new ProgressBar();
             progressBar3 = new ProgressBar();
@@ -44,11 +48,17 @@
             progressBar4 = new ProgressBar();
             progressBar2 = new ProgressBar();
             progressBar1 = new ProgressBar();
-            label12 = new Label();
+            lblVel = new Label();
             label8 = new Label();
-            label11 = new Label();
+            lblDefensae = new Label();
             label7 = new Label();
-            label10 = new Label();
+            lblAtaqueE = new Label();
+            numVe = new Label();
+            numDf = new Label();
+            numDe = new Label();
+            numAe = new Label();
+            numAt = new Label();
+            numHp = new Label();
             lblHp = new Label();
             lblTipo2 = new Label();
             lblTipo1 = new Label();
@@ -77,7 +87,7 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(190, 14);
+            txtNombre.Location = new Point(179, 13);
             txtNombre.Margin = new Padding(3, 2, 3, 2);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(166, 23);
@@ -86,6 +96,7 @@
             // 
             // btnBuscar
             // 
+            btnBuscar.Cursor = Cursors.Hand;
             btnBuscar.Location = new Point(360, 14);
             btnBuscar.Margin = new Padding(3, 2, 3, 2);
             btnBuscar.Name = "btnBuscar";
@@ -112,7 +123,7 @@
             pictureBox1.Location = new Point(15, 14);
             pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(314, 238);
+            pictureBox1.Size = new Size(240, 240);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
@@ -145,10 +156,10 @@
             // 
             panel1.BackColor = Color.Cornsilk;
             panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(27, 27);
+            panel1.Location = new Point(67, 27);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(346, 268);
+            panel1.Size = new Size(270, 270);
             panel1.TabIndex = 7;
             // 
             // panel2
@@ -167,6 +178,10 @@
             // panel3
             // 
             panel3.BackColor = SystemColors.ButtonHighlight;
+            panel3.Controls.Add(MSonidoViejo);
+            panel3.Controls.Add(label13);
+            panel3.Controls.Add(label5);
+            panel3.Controls.Add(MSonidoNuevo);
             panel3.Controls.Add(panel1);
             panel3.Controls.Add(panel4);
             panel3.Controls.Add(lblTipo2);
@@ -188,6 +203,46 @@
             panel3.Size = new Size(976, 432);
             panel3.TabIndex = 9;
             // 
+            // MSonidoViejo
+            // 
+            MSonidoViejo.Cursor = Cursors.Hand;
+            MSonidoViejo.Image = Properties.Resources.speaker_filled_audio_tool;
+            MSonidoViejo.Location = new Point(332, 344);
+            MSonidoViejo.Name = "MSonidoViejo";
+            MSonidoViejo.Size = new Size(41, 23);
+            MSonidoViejo.TabIndex = 13;
+            MSonidoViejo.UseVisualStyleBackColor = true;
+            MSonidoViejo.Click += MSonidoViejo_Click;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(238, 347);
+            label13.Name = "label13";
+            label13.Size = new Size(93, 15);
+            label13.TabIndex = 12;
+            label13.Text = "Sonido Antiguo:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(238, 315);
+            label5.Name = "label5";
+            label5.Size = new Size(85, 15);
+            label5.TabIndex = 12;
+            label5.Text = "Sonido Nuevo:";
+            // 
+            // MSonidoNuevo
+            // 
+            MSonidoNuevo.Cursor = Cursors.Hand;
+            MSonidoNuevo.Image = Properties.Resources.speaker_filled_audio_tool;
+            MSonidoNuevo.Location = new Point(332, 312);
+            MSonidoNuevo.Name = "MSonidoNuevo";
+            MSonidoNuevo.Size = new Size(41, 23);
+            MSonidoNuevo.TabIndex = 11;
+            MSonidoNuevo.UseVisualStyleBackColor = true;
+            MSonidoNuevo.Click += MSonidoNuevo_Click;
+            // 
             // panel4
             // 
             panel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -198,11 +253,17 @@
             panel4.Controls.Add(progressBar4);
             panel4.Controls.Add(progressBar2);
             panel4.Controls.Add(progressBar1);
-            panel4.Controls.Add(label12);
+            panel4.Controls.Add(lblVel);
             panel4.Controls.Add(label8);
-            panel4.Controls.Add(label11);
+            panel4.Controls.Add(lblDefensae);
             panel4.Controls.Add(label7);
-            panel4.Controls.Add(label10);
+            panel4.Controls.Add(lblAtaqueE);
+            panel4.Controls.Add(numVe);
+            panel4.Controls.Add(numDf);
+            panel4.Controls.Add(numDe);
+            panel4.Controls.Add(numAe);
+            panel4.Controls.Add(numAt);
+            panel4.Controls.Add(numHp);
             panel4.Controls.Add(lblHp);
             panel4.Location = new Point(406, 36);
             panel4.Margin = new Padding(3, 2, 3, 2);
@@ -212,7 +273,7 @@
             // 
             // progressBar6
             // 
-            progressBar6.Location = new Point(368, 72);
+            progressBar6.Location = new Point(381, 72);
             progressBar6.Margin = new Padding(3, 2, 3, 2);
             progressBar6.Name = "progressBar6";
             progressBar6.Size = new Size(153, 13);
@@ -221,7 +282,7 @@
             // 
             // progressBar3
             // 
-            progressBar3.Location = new Point(87, 72);
+            progressBar3.Location = new Point(96, 72);
             progressBar3.Margin = new Padding(3, 2, 3, 2);
             progressBar3.Name = "progressBar3";
             progressBar3.Size = new Size(153, 13);
@@ -230,7 +291,7 @@
             // 
             // progressBar5
             // 
-            progressBar5.Location = new Point(368, 41);
+            progressBar5.Location = new Point(381, 41);
             progressBar5.Margin = new Padding(3, 2, 3, 2);
             progressBar5.Name = "progressBar5";
             progressBar5.Size = new Size(153, 13);
@@ -239,7 +300,7 @@
             // 
             // progressBar4
             // 
-            progressBar4.Location = new Point(368, 10);
+            progressBar4.Location = new Point(381, 10);
             progressBar4.Margin = new Padding(3, 2, 3, 2);
             progressBar4.Name = "progressBar4";
             progressBar4.Size = new Size(153, 13);
@@ -248,7 +309,7 @@
             // 
             // progressBar2
             // 
-            progressBar2.Location = new Point(87, 41);
+            progressBar2.Location = new Point(96, 41);
             progressBar2.Margin = new Padding(3, 2, 3, 2);
             progressBar2.Name = "progressBar2";
             progressBar2.Size = new Size(153, 13);
@@ -257,21 +318,21 @@
             // 
             // progressBar1
             // 
-            progressBar1.Location = new Point(87, 10);
+            progressBar1.Location = new Point(96, 10);
             progressBar1.Margin = new Padding(3, 2, 3, 2);
             progressBar1.Name = "progressBar1";
             progressBar1.Size = new Size(153, 13);
             progressBar1.Step = 1;
             progressBar1.TabIndex = 1;
             // 
-            // label12
+            // lblVel
             // 
-            label12.AutoSize = true;
-            label12.Location = new Point(257, 70);
-            label12.Name = "label12";
-            label12.Size = new Size(39, 15);
-            label12.TabIndex = 0;
-            label12.Text = "Speed";
+            lblVel.AutoSize = true;
+            lblVel.Location = new Point(257, 70);
+            lblVel.Name = "lblVel";
+            lblVel.Size = new Size(58, 15);
+            lblVel.TabIndex = 0;
+            lblVel.Text = "Velocidad";
             // 
             // label8
             // 
@@ -282,14 +343,14 @@
             label8.TabIndex = 0;
             label8.Text = "Defensa";
             // 
-            // label11
+            // lblDefensae
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(257, 39);
-            label11.Name = "label11";
-            label11.Size = new Size(94, 15);
-            label11.TabIndex = 0;
-            label11.Text = "Defensa Especial";
+            lblDefensae.AutoSize = true;
+            lblDefensae.Location = new Point(257, 39);
+            lblDefensae.Name = "lblDefensae";
+            lblDefensae.Size = new Size(94, 15);
+            lblDefensae.TabIndex = 0;
+            lblDefensae.Text = "Defensa Especial";
             // 
             // label7
             // 
@@ -300,14 +361,68 @@
             label7.TabIndex = 0;
             label7.Text = "Ataque";
             // 
-            // label10
+            // lblAtaqueE
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(257, 8);
-            label10.Name = "label10";
-            label10.Size = new Size(90, 15);
-            label10.TabIndex = 0;
-            label10.Text = "Ataque Especial";
+            lblAtaqueE.AutoSize = true;
+            lblAtaqueE.Location = new Point(257, 8);
+            lblAtaqueE.Name = "lblAtaqueE";
+            lblAtaqueE.Size = new Size(90, 15);
+            lblAtaqueE.TabIndex = 0;
+            lblAtaqueE.Text = "Ataque Especial";
+            // 
+            // numVe
+            // 
+            numVe.AutoSize = true;
+            numVe.Location = new Point(354, 71);
+            numVe.Name = "numVe";
+            numVe.Size = new Size(12, 15);
+            numVe.TabIndex = 0;
+            numVe.Text = "_";
+            // 
+            // numDf
+            // 
+            numDf.AutoSize = true;
+            numDf.Location = new Point(69, 70);
+            numDf.Name = "numDf";
+            numDf.Size = new Size(12, 15);
+            numDf.TabIndex = 0;
+            numDf.Text = "_";
+            // 
+            // numDe
+            // 
+            numDe.AutoSize = true;
+            numDe.Location = new Point(354, 41);
+            numDe.Name = "numDe";
+            numDe.Size = new Size(12, 15);
+            numDe.TabIndex = 0;
+            numDe.Text = "_";
+            // 
+            // numAe
+            // 
+            numAe.AutoSize = true;
+            numAe.Location = new Point(354, 9);
+            numAe.Name = "numAe";
+            numAe.Size = new Size(12, 15);
+            numAe.TabIndex = 0;
+            numAe.Text = "_";
+            // 
+            // numAt
+            // 
+            numAt.AutoSize = true;
+            numAt.Location = new Point(69, 40);
+            numAt.Name = "numAt";
+            numAt.Size = new Size(12, 15);
+            numAt.TabIndex = 0;
+            numAt.Text = "_";
+            // 
+            // numHp
+            // 
+            numHp.AutoSize = true;
+            numHp.Location = new Point(69, 8);
+            numHp.Name = "numHp";
+            numHp.Size = new Size(12, 15);
+            numHp.TabIndex = 0;
+            numHp.Text = "_";
             // 
             // lblHp
             // 
@@ -321,34 +436,35 @@
             // lblTipo2
             // 
             lblTipo2.AutoSize = true;
-            lblTipo2.Font = new Font("Segoe UI Light", 10.8F, FontStyle.Underline);
-            lblTipo2.Location = new Point(130, 368);
+            lblTipo2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTipo2.Location = new Point(118, 379);
             lblTipo2.Name = "lblTipo2";
-            lblTipo2.Size = new Size(46, 20);
+            lblTipo2.Size = new Size(15, 20);
             lblTipo2.TabIndex = 9;
-            lblTipo2.Text = "label5";
+            lblTipo2.Text = "_";
             lblTipo2.Visible = false;
             // 
             // lblTipo1
             // 
             lblTipo1.AutoSize = true;
-            lblTipo1.Font = new Font("Segoe UI Light", 10.8F, FontStyle.Underline);
-            lblTipo1.Location = new Point(130, 338);
+            lblTipo1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTipo1.Location = new Point(118, 349);
             lblTipo1.Name = "lblTipo1";
-            lblTipo1.Size = new Size(46, 20);
+            lblTipo1.Size = new Size(15, 20);
             lblTipo1.TabIndex = 9;
-            lblTipo1.Text = "label5";
+            lblTipo1.Text = "_";
             lblTipo1.Visible = false;
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Font = new Font("Segoe UI Light", 10.8F, FontStyle.Underline);
-            lblNombre.Location = new Point(130, 301);
+            lblNombre.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            lblNombre.ForeColor = SystemColors.MenuText;
+            lblNombre.Location = new Point(118, 310);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(46, 20);
+            lblNombre.Size = new Size(17, 21);
             lblNombre.TabIndex = 9;
-            lblNombre.Text = "label5";
+            lblNombre.Text = "_";
             lblNombre.Visible = false;
             // 
             // dgvPokedex
@@ -393,7 +509,7 @@
             label2.AutoSize = true;
             label2.BackColor = SystemColors.ButtonHighlight;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label2.Location = new Point(27, 333);
+            label2.Location = new Point(27, 344);
             label2.Name = "label2";
             label2.Size = new Size(48, 21);
             label2.TabIndex = 7;
@@ -437,7 +553,7 @@
             label1.AutoSize = true;
             label1.BackColor = SystemColors.ButtonHighlight;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label1.Location = new Point(27, 297);
+            label1.Location = new Point(27, 308);
             label1.Name = "label1";
             label1.Size = new Size(77, 21);
             label1.TabIndex = 7;
@@ -536,14 +652,24 @@
         private Label label8;
         private Label label7;
         private Label lblHp;
-        private Label label12;
-        private Label label11;
-        private Label label10;
+        private Label lblVel;
+        private Label lblDefensae;
+        private Label lblAtaqueE;
         private ProgressBar progressBar6;
         private ProgressBar progressBar3;
         private ProgressBar progressBar5;
         private ProgressBar progressBar4;
         private ProgressBar progressBar2;
         private ProgressBar progressBar1;
+        private Button MSonidoNuevo;
+        private Label label13;
+        private Label label5;
+        private Button MSonidoViejo;
+        private Label numVe;
+        private Label numDf;
+        private Label numDe;
+        private Label numAe;
+        private Label numAt;
+        private Label numHp;
     }
 }
