@@ -13,7 +13,7 @@ namespace PrimeraVezConAPIs.Servicios
 {
     internal class ObtenerPokemon
     {
-        public async Task<Pokemon> DatosPokemon(string nombre)
+        public async Task<Modelo.Pokemon> DatosPokemon(string nombre)
         {
             try
             {
@@ -21,7 +21,7 @@ namespace PrimeraVezConAPIs.Servicios
                 var url = $"https://pokeapi.co/api/v2/pokemon/{nombre.ToLower()}";
                 var respuesta = await Cliente.GetStringAsync(url);
 
-                var pokemon = JsonConvert.DeserializeObject<Pokemon>(respuesta);
+                var pokemon = JsonConvert.DeserializeObject<Modelo.Pokemon>(respuesta);
                 return pokemon;
             }
             catch

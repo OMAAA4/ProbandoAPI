@@ -4,12 +4,13 @@ using PrimeraVezConAPIs.Servicios;
 using System.Security.Cryptography.X509Certificates;
 using NAudio.Wave;
 using NAudio.Vorbis;
+using PrimeraVezConAPIs.Forms;
 
 namespace PrimeraVezConAPIs
 {
-    public partial class Form1 : Form
+    public partial class PokemonForm : Form
     {
-        public Form1()
+        public PokemonForm()
         {
             InitializeComponent();
         }
@@ -30,7 +31,9 @@ namespace PrimeraVezConAPIs
             txtNombre.AutoCompleteCustomSource = autoComplete;
             txtNombre.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             txtNombre.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
+            ModificacionInterfaz.RedondearLabel(lblNombre,5);
+            lblNombre.BackColor = Color.Yellow;
+            lblNombre.AutoSize = true;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

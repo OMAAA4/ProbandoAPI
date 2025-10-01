@@ -12,6 +12,7 @@
     <PackageReference Include="NAudio" Version="2.2.1" />
     <PackageReference Include="NAudio.Vorbis" Version="1.5.0" />
     <PackageReference Include="Newtonsoft.json" Version="13.0.4" />
+    <PackageReference Include="RibbonWinForms" Version="5.0.1.1" />
   </ItemGroup>
 
   <ItemGroup>

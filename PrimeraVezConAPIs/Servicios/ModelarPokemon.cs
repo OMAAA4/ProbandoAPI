@@ -14,7 +14,7 @@ namespace PrimeraVezConAPIs.Servicios
 {
     internal static class ModelarPokemon
     {
-        public static async Task<BaseModelado> DatosPokemon(Pokemon p) => new BaseModelado
+        public static async Task<BaseModelado> DatosPokemon(Modelo.Pokemon p) => new BaseModelado
         {
             Nombre = p.Nombre,
             Tipos = p.Tipo?.Select(t => new TiposBase

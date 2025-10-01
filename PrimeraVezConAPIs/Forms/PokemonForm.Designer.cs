@@ -1,6 +1,6 @@
 ﻿namespace PrimeraVezConAPIs
 {
-    partial class Form1
+    partial class PokemonForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -34,13 +34,17 @@
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             label3 = new Label();
-            panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
-            MSonidoViejo = new Button();
-            label13 = new Label();
+            panel1 = new Panel();
             label5 = new Label();
+            MSonidoViejo = new Button();
+            lblNombre = new Label();
+            label13 = new Label();
+            lblTipo1 = new Label();
             MSonidoNuevo = new Button();
+            lblTipo2 = new Label();
+            label9 = new Label();
             panel4 = new Panel();
             progressBar6 = new ProgressBar();
             progressBar3 = new ProgressBar();
@@ -60,24 +64,18 @@
             numAt = new Label();
             numHp = new Label();
             lblHp = new Label();
-            lblTipo2 = new Label();
-            lblTipo1 = new Label();
-            lblNombre = new Label();
             dgvPokedex = new DataGridView();
             dgvHabilidades = new DataGridView();
-            label2 = new Label();
             label6 = new Label();
-            label9 = new Label();
             label4 = new Label();
-            label1 = new Label();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
+            panel1.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPokedex).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvHabilidades).BeginInit();
@@ -87,20 +85,18 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(179, 13);
-            txtNombre.Margin = new Padding(3, 2, 3, 2);
+            txtNombre.Location = new Point(215, 19);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(166, 23);
+            txtNombre.Size = new Size(189, 27);
             txtNombre.TabIndex = 0;
             txtNombre.KeyPress += txtNombre_KeyPress;
             // 
             // btnBuscar
             // 
             btnBuscar.Cursor = Cursors.Hand;
-            btnBuscar.Location = new Point(360, 14);
-            btnBuscar.Margin = new Padding(3, 2, 3, 2);
+            btnBuscar.Location = new Point(411, 18);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(82, 22);
+            btnBuscar.Size = new Size(94, 29);
             btnBuscar.TabIndex = 1;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
@@ -111,19 +107,18 @@
             lbBusqueda.AutoSize = true;
             lbBusqueda.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbBusqueda.ForeColor = SystemColors.ButtonHighlight;
-            lbBusqueda.Location = new Point(10, 14);
+            lbBusqueda.Location = new Point(11, 19);
             lbBusqueda.Name = "lbBusqueda";
-            lbBusqueda.Size = new Size(163, 20);
+            lbBusqueda.Size = new Size(199, 25);
             lbBusqueda.TabIndex = 2;
             lbBusqueda.Text = "Nombre del Pokémon:";
             // 
             // pictureBox1
             // 
             pictureBox1.BackColor = SystemColors.ButtonHighlight;
-            pictureBox1.Location = new Point(15, 14);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Location = new Point(47, 18);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(240, 240);
+            pictureBox1.Size = new Size(234, 234);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
@@ -133,10 +128,9 @@
             pictureBox2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             pictureBox2.BackColor = SystemColors.ButtonHighlight;
             pictureBox2.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox2.Location = new Point(781, 285);
-            pictureBox2.Margin = new Padding(3, 2, 3, 2);
+            pictureBox2.Location = new Point(893, 377);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(154, 132);
+            pictureBox2.Size = new Size(176, 175);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 5;
             pictureBox2.TabStop = false;
@@ -146,21 +140,11 @@
             label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
-            label3.Location = new Point(781, 265);
+            label3.Location = new Point(893, 350);
             label3.Name = "label3";
-            label3.Size = new Size(56, 19);
+            label3.Size = new Size(68, 23);
             label3.TabIndex = 6;
             label3.Text = "Espalda";
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.Cornsilk;
-            panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(67, 27);
-            panel1.Margin = new Padding(3, 2, 3, 2);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(270, 270);
-            panel1.TabIndex = 7;
             // 
             // panel2
             // 
@@ -169,84 +153,139 @@
             panel2.Controls.Add(txtNombre);
             panel2.Controls.Add(btnBuscar);
             panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(3, 2);
-            panel2.Margin = new Padding(3, 2, 3, 2);
+            panel2.Location = new Point(3, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(976, 45);
+            panel2.Size = new Size(1115, 60);
             panel2.TabIndex = 8;
             // 
             // panel3
             // 
             panel3.BackColor = SystemColors.ButtonHighlight;
-            panel3.Controls.Add(MSonidoViejo);
-            panel3.Controls.Add(label13);
-            panel3.Controls.Add(label5);
-            panel3.Controls.Add(MSonidoNuevo);
             panel3.Controls.Add(panel1);
+            panel3.Controls.Add(label9);
             panel3.Controls.Add(panel4);
-            panel3.Controls.Add(lblTipo2);
-            panel3.Controls.Add(lblTipo1);
-            panel3.Controls.Add(lblNombre);
             panel3.Controls.Add(dgvPokedex);
             panel3.Controls.Add(dgvHabilidades);
-            panel3.Controls.Add(label2);
             panel3.Controls.Add(label6);
-            panel3.Controls.Add(label9);
             panel3.Controls.Add(label4);
-            panel3.Controls.Add(label1);
             panel3.Controls.Add(label3);
             panel3.Controls.Add(pictureBox2);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(3, 47);
-            panel3.Margin = new Padding(3, 2, 3, 2);
+            panel3.Location = new Point(3, 63);
             panel3.Name = "panel3";
-            panel3.Size = new Size(976, 432);
+            panel3.Size = new Size(1115, 573);
             panel3.TabIndex = 9;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(MSonidoViejo);
+            panel1.Controls.Add(lblNombre);
+            panel1.Controls.Add(label13);
+            panel1.Controls.Add(lblTipo1);
+            panel1.Controls.Add(MSonidoNuevo);
+            panel1.Controls.Add(lblTipo2);
+            panel1.Location = new Point(41, 26);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(326, 496);
+            panel1.TabIndex = 15;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold);
+            label5.Location = new Point(47, 373);
+            label5.Name = "label5";
+            label5.Size = new Size(169, 31);
+            label5.TabIndex = 12;
+            label5.Text = "Sonido Nuevo:";
             // 
             // MSonidoViejo
             // 
             MSonidoViejo.Cursor = Cursors.Hand;
             MSonidoViejo.Image = Properties.Resources.speaker_filled_audio_tool;
-            MSonidoViejo.Location = new Point(332, 344);
+            MSonidoViejo.Location = new Point(234, 432);
+            MSonidoViejo.Margin = new Padding(3, 4, 3, 4);
             MSonidoViejo.Name = "MSonidoViejo";
-            MSonidoViejo.Size = new Size(41, 23);
+            MSonidoViejo.Size = new Size(47, 31);
             MSonidoViejo.TabIndex = 13;
             MSonidoViejo.UseVisualStyleBackColor = true;
             MSonidoViejo.Click += MSonidoViejo_Click;
             // 
+            // lblNombre
+            // 
+            lblNombre.AutoSize = true;
+            lblNombre.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNombre.ForeColor = SystemColors.MenuText;
+            lblNombre.Location = new Point(140, 255);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Padding = new Padding(10, 4, 10, 4);
+            lblNombre.Size = new Size(49, 46);
+            lblNombre.TabIndex = 9;
+            lblNombre.Text = "_";
+            lblNombre.TextAlign = ContentAlignment.MiddleCenter;
+            lblNombre.Visible = false;
+            // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(238, 347);
+            label13.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold);
+            label13.Location = new Point(47, 434);
             label13.Name = "label13";
-            label13.Size = new Size(93, 15);
+            label13.Size = new Size(183, 31);
             label13.TabIndex = 12;
             label13.Text = "Sonido Antiguo:";
             // 
-            // label5
+            // lblTipo1
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(238, 315);
-            label5.Name = "label5";
-            label5.Size = new Size(85, 15);
-            label5.TabIndex = 12;
-            label5.Text = "Sonido Nuevo:";
+            lblTipo1.AutoSize = true;
+            lblTipo1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTipo1.Location = new Point(80, 313);
+            lblTipo1.Name = "lblTipo1";
+            lblTipo1.Size = new Size(20, 25);
+            lblTipo1.TabIndex = 9;
+            lblTipo1.Text = "_";
+            lblTipo1.Visible = false;
             // 
             // MSonidoNuevo
             // 
             MSonidoNuevo.Cursor = Cursors.Hand;
             MSonidoNuevo.Image = Properties.Resources.speaker_filled_audio_tool;
-            MSonidoNuevo.Location = new Point(332, 312);
+            MSonidoNuevo.Location = new Point(234, 377);
+            MSonidoNuevo.Margin = new Padding(3, 4, 3, 4);
             MSonidoNuevo.Name = "MSonidoNuevo";
-            MSonidoNuevo.Size = new Size(41, 23);
+            MSonidoNuevo.Size = new Size(47, 31);
             MSonidoNuevo.TabIndex = 11;
             MSonidoNuevo.UseVisualStyleBackColor = true;
             MSonidoNuevo.Click += MSonidoNuevo_Click;
             // 
+            // lblTipo2
+            // 
+            lblTipo2.AutoSize = true;
+            lblTipo2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTipo2.Location = new Point(224, 313);
+            lblTipo2.Name = "lblTipo2";
+            lblTipo2.Size = new Size(20, 25);
+            lblTipo2.TabIndex = 9;
+            lblTipo2.Text = "_";
+            lblTipo2.Visible = false;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = SystemColors.ButtonHighlight;
+            label9.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label9.Location = new Point(543, 5);
+            label9.Name = "label9";
+            label9.Size = new Size(122, 28);
+            label9.TabIndex = 7;
+            label9.Text = "Estadisticas";
+            // 
             // panel4
             // 
             panel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel4.BackColor = Color.Cornsilk;
+            panel4.BackColor = SystemColors.ButtonHighlight;
             panel4.Controls.Add(progressBar6);
             panel4.Controls.Add(progressBar3);
             panel4.Controls.Add(progressBar5);
@@ -265,207 +304,166 @@
             panel4.Controls.Add(numAt);
             panel4.Controls.Add(numHp);
             panel4.Controls.Add(lblHp);
-            panel4.Location = new Point(406, 36);
-            panel4.Margin = new Padding(3, 2, 3, 2);
+            panel4.Location = new Point(464, 48);
             panel4.Name = "panel4";
-            panel4.Size = new Size(543, 94);
+            panel4.Size = new Size(621, 125);
             panel4.TabIndex = 10;
             // 
             // progressBar6
             // 
-            progressBar6.Location = new Point(381, 72);
-            progressBar6.Margin = new Padding(3, 2, 3, 2);
+            progressBar6.Location = new Point(436, 96);
             progressBar6.Name = "progressBar6";
-            progressBar6.Size = new Size(153, 13);
+            progressBar6.Size = new Size(175, 17);
             progressBar6.Step = 1;
             progressBar6.TabIndex = 1;
             // 
             // progressBar3
             // 
-            progressBar3.Location = new Point(96, 72);
-            progressBar3.Margin = new Padding(3, 2, 3, 2);
+            progressBar3.Location = new Point(110, 96);
             progressBar3.Name = "progressBar3";
-            progressBar3.Size = new Size(153, 13);
+            progressBar3.Size = new Size(175, 17);
             progressBar3.Step = 1;
             progressBar3.TabIndex = 1;
             // 
             // progressBar5
             // 
-            progressBar5.Location = new Point(381, 41);
-            progressBar5.Margin = new Padding(3, 2, 3, 2);
+            progressBar5.Location = new Point(436, 55);
             progressBar5.Name = "progressBar5";
-            progressBar5.Size = new Size(153, 13);
+            progressBar5.Size = new Size(175, 17);
             progressBar5.Step = 1;
             progressBar5.TabIndex = 1;
             // 
             // progressBar4
             // 
-            progressBar4.Location = new Point(381, 10);
-            progressBar4.Margin = new Padding(3, 2, 3, 2);
+            progressBar4.Location = new Point(436, 13);
             progressBar4.Name = "progressBar4";
-            progressBar4.Size = new Size(153, 13);
+            progressBar4.Size = new Size(175, 17);
             progressBar4.Step = 1;
             progressBar4.TabIndex = 1;
             // 
             // progressBar2
             // 
-            progressBar2.Location = new Point(96, 41);
-            progressBar2.Margin = new Padding(3, 2, 3, 2);
+            progressBar2.Location = new Point(110, 55);
             progressBar2.Name = "progressBar2";
-            progressBar2.Size = new Size(153, 13);
+            progressBar2.Size = new Size(175, 17);
             progressBar2.Step = 1;
             progressBar2.TabIndex = 1;
             // 
             // progressBar1
             // 
-            progressBar1.Location = new Point(96, 10);
-            progressBar1.Margin = new Padding(3, 2, 3, 2);
+            progressBar1.Location = new Point(110, 13);
             progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(153, 13);
+            progressBar1.Size = new Size(175, 17);
             progressBar1.Step = 1;
             progressBar1.TabIndex = 1;
             // 
             // lblVel
             // 
             lblVel.AutoSize = true;
-            lblVel.Location = new Point(257, 70);
+            lblVel.Location = new Point(291, 93);
             lblVel.Name = "lblVel";
-            lblVel.Size = new Size(58, 15);
+            lblVel.Size = new Size(75, 20);
             lblVel.TabIndex = 0;
             lblVel.Text = "Velocidad";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(14, 70);
+            label8.Location = new Point(16, 93);
             label8.Name = "label8";
-            label8.Size = new Size(49, 15);
+            label8.Size = new Size(63, 20);
             label8.TabIndex = 0;
             label8.Text = "Defensa";
             // 
             // lblDefensae
             // 
             lblDefensae.AutoSize = true;
-            lblDefensae.Location = new Point(257, 39);
+            lblDefensae.Location = new Point(291, 52);
             lblDefensae.Name = "lblDefensae";
-            lblDefensae.Size = new Size(94, 15);
+            lblDefensae.Size = new Size(121, 20);
             lblDefensae.TabIndex = 0;
             lblDefensae.Text = "Defensa Especial";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(14, 39);
+            label7.Location = new Point(16, 52);
             label7.Name = "label7";
-            label7.Size = new Size(45, 15);
+            label7.Size = new Size(57, 20);
             label7.TabIndex = 0;
             label7.Text = "Ataque";
             // 
             // lblAtaqueE
             // 
             lblAtaqueE.AutoSize = true;
-            lblAtaqueE.Location = new Point(257, 8);
+            lblAtaqueE.Location = new Point(291, 11);
             lblAtaqueE.Name = "lblAtaqueE";
-            lblAtaqueE.Size = new Size(90, 15);
+            lblAtaqueE.Size = new Size(115, 20);
             lblAtaqueE.TabIndex = 0;
             lblAtaqueE.Text = "Ataque Especial";
             // 
             // numVe
             // 
             numVe.AutoSize = true;
-            numVe.Location = new Point(354, 71);
+            numVe.Location = new Point(409, 95);
             numVe.Name = "numVe";
-            numVe.Size = new Size(12, 15);
+            numVe.Size = new Size(15, 20);
             numVe.TabIndex = 0;
             numVe.Text = "_";
             // 
             // numDf
             // 
             numDf.AutoSize = true;
-            numDf.Location = new Point(69, 70);
+            numDf.Location = new Point(79, 93);
             numDf.Name = "numDf";
-            numDf.Size = new Size(12, 15);
+            numDf.Size = new Size(15, 20);
             numDf.TabIndex = 0;
             numDf.Text = "_";
             // 
             // numDe
             // 
             numDe.AutoSize = true;
-            numDe.Location = new Point(354, 41);
+            numDe.Location = new Point(409, 55);
             numDe.Name = "numDe";
-            numDe.Size = new Size(12, 15);
+            numDe.Size = new Size(15, 20);
             numDe.TabIndex = 0;
             numDe.Text = "_";
             // 
             // numAe
             // 
             numAe.AutoSize = true;
-            numAe.Location = new Point(354, 9);
+            numAe.Location = new Point(409, 12);
             numAe.Name = "numAe";
-            numAe.Size = new Size(12, 15);
+            numAe.Size = new Size(15, 20);
             numAe.TabIndex = 0;
             numAe.Text = "_";
             // 
             // numAt
             // 
             numAt.AutoSize = true;
-            numAt.Location = new Point(69, 40);
+            numAt.Location = new Point(79, 53);
             numAt.Name = "numAt";
-            numAt.Size = new Size(12, 15);
+            numAt.Size = new Size(15, 20);
             numAt.TabIndex = 0;
             numAt.Text = "_";
             // 
             // numHp
             // 
             numHp.AutoSize = true;
-            numHp.Location = new Point(69, 8);
+            numHp.Location = new Point(79, 11);
             numHp.Name = "numHp";
-            numHp.Size = new Size(12, 15);
+            numHp.Size = new Size(15, 20);
             numHp.TabIndex = 0;
             numHp.Text = "_";
             // 
             // lblHp
             // 
             lblHp.AutoSize = true;
-            lblHp.Location = new Point(14, 8);
+            lblHp.Location = new Point(16, 11);
             lblHp.Name = "lblHp";
-            lblHp.Size = new Size(23, 15);
+            lblHp.Size = new Size(29, 20);
             lblHp.TabIndex = 0;
             lblHp.Text = "Hp";
-            // 
-            // lblTipo2
-            // 
-            lblTipo2.AutoSize = true;
-            lblTipo2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTipo2.Location = new Point(118, 379);
-            lblTipo2.Name = "lblTipo2";
-            lblTipo2.Size = new Size(15, 20);
-            lblTipo2.TabIndex = 9;
-            lblTipo2.Text = "_";
-            lblTipo2.Visible = false;
-            // 
-            // lblTipo1
-            // 
-            lblTipo1.AutoSize = true;
-            lblTipo1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTipo1.Location = new Point(118, 349);
-            lblTipo1.Name = "lblTipo1";
-            lblTipo1.Size = new Size(15, 20);
-            lblTipo1.TabIndex = 9;
-            lblTipo1.Text = "_";
-            lblTipo1.Visible = false;
-            // 
-            // lblNombre
-            // 
-            lblNombre.AutoSize = true;
-            lblNombre.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            lblNombre.ForeColor = SystemColors.MenuText;
-            lblNombre.Location = new Point(118, 310);
-            lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(17, 21);
-            lblNombre.TabIndex = 9;
-            lblNombre.Text = "_";
-            lblNombre.Visible = false;
             // 
             // dgvPokedex
             // 
@@ -475,15 +473,14 @@
             dgvPokedex.AllowUserToResizeRows = false;
             dgvPokedex.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvPokedex.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvPokedex.BackgroundColor = Color.Cornsilk;
+            dgvPokedex.BackgroundColor = SystemColors.ButtonHighlight;
             dgvPokedex.BorderStyle = BorderStyle.None;
             dgvPokedex.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPokedex.Location = new Point(406, 268);
-            dgvPokedex.Margin = new Padding(3, 2, 3, 2);
+            dgvPokedex.Location = new Point(464, 360);
             dgvPokedex.Name = "dgvPokedex";
             dgvPokedex.RowHeadersVisible = false;
             dgvPokedex.RowHeadersWidth = 51;
-            dgvPokedex.Size = new Size(311, 149);
+            dgvPokedex.Size = new Size(355, 193);
             dgvPokedex.TabIndex = 8;
             // 
             // dgvHabilidades
@@ -493,71 +490,37 @@
             dgvHabilidades.AllowUserToResizeColumns = false;
             dgvHabilidades.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dgvHabilidades.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvHabilidades.BackgroundColor = Color.FromArgb(192, 255, 192);
+            dgvHabilidades.BackgroundColor = SystemColors.ButtonHighlight;
             dgvHabilidades.BorderStyle = BorderStyle.None;
             dgvHabilidades.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvHabilidades.Location = new Point(406, 158);
-            dgvHabilidades.Margin = new Padding(3, 2, 3, 2);
+            dgvHabilidades.Location = new Point(464, 214);
             dgvHabilidades.Name = "dgvHabilidades";
             dgvHabilidades.RowHeadersVisible = false;
             dgvHabilidades.RowHeadersWidth = 51;
-            dgvHabilidades.Size = new Size(311, 74);
+            dgvHabilidades.Size = new Size(355, 96);
             dgvHabilidades.TabIndex = 8;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = SystemColors.ButtonHighlight;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label2.Location = new Point(27, 344);
-            label2.Name = "label2";
-            label2.Size = new Size(48, 21);
-            label2.TabIndex = 7;
-            label2.Text = "Tipo:";
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.BackColor = SystemColors.ButtonHighlight;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label6.Location = new Point(406, 242);
+            label6.Location = new Point(464, 323);
             label6.Name = "label6";
-            label6.Size = new Size(174, 21);
+            label6.Size = new Size(215, 28);
             label6.TabIndex = 7;
             label6.Text = "# Pokedex por juegos";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.BackColor = SystemColors.ButtonHighlight;
-            label9.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label9.Location = new Point(406, 13);
-            label9.Name = "label9";
-            label9.Size = new Size(98, 21);
-            label9.TabIndex = 7;
-            label9.Text = "Estadisticas";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.BackColor = SystemColors.ButtonHighlight;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label4.Location = new Point(406, 135);
+            label4.Location = new Point(610, 201);
             label4.Name = "label4";
-            label4.Size = new Size(101, 21);
+            label4.Size = new Size(123, 28);
             label4.TabIndex = 7;
             label4.Text = "Habilidades";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = SystemColors.ButtonHighlight;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label1.Location = new Point(27, 308);
-            label1.Name = "label1";
-            label1.Size = new Size(77, 21);
-            label1.TabIndex = 7;
-            label1.Text = "Nombre:";
             // 
             // tabControl1
             // 
@@ -565,56 +528,51 @@
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 0);
-            tabControl1.Margin = new Padding(3, 2, 3, 2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(990, 509);
+            tabControl1.Size = new Size(1129, 672);
             tabControl1.TabIndex = 10;
             // 
             // tabPage1
             // 
             tabPage1.Controls.Add(panel3);
             tabPage1.Controls.Add(panel2);
-            tabPage1.Location = new Point(4, 24);
-            tabPage1.Margin = new Padding(3, 2, 3, 2);
+            tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3, 2, 3, 2);
-            tabPage1.Size = new Size(982, 481);
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(1121, 639);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Búsqueda individual";
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Margin = new Padding(3, 2, 3, 2);
+            tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3, 2, 3, 2);
-            tabPage2.Size = new Size(982, 481);
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(1121, 639);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Todos los pokémones";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // PokemonForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PaleGreen;
-            ClientSize = new Size(990, 509);
+            ClientSize = new Size(1129, 672);
             Controls.Add(tabControl1);
-            Margin = new Padding(3, 2, 3, 2);
-            MaximumSize = new Size(1006, 551);
-            MinimumSize = new Size(1006, 548);
-            Name = "Form1";
+            Name = "PokemonForm";
             Text = "Form1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPokedex).EndInit();
@@ -632,13 +590,10 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Label label3;
-        private Panel panel1;
         private Panel panel2;
         private Panel panel3;
         private DataGridView dgvHabilidades;
-        private Label label2;
         private Label label4;
-        private Label label1;
         private Label lblNombre;
         private Label lblTipo2;
         private Label lblTipo1;
@@ -671,5 +626,6 @@
         private Label numAe;
         private Label numAt;
         private Label numHp;
+        private Panel panel1;
     }
 }
