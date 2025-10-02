@@ -71,6 +71,14 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
+            tableLayoutPanel2 = new TableLayoutPanel();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            panelPrincipal = new Panel();
+            panelSecundario = new Panel();
+            panelSuperior = new Panel();
+            button1 = new Button();
+            textBox1 = new TextBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel2.SuspendLayout();
@@ -81,6 +89,11 @@
             ((System.ComponentModel.ISupportInitialize)dgvHabilidades).BeginInit();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            tabPage2.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
+            panelPrincipal.SuspendLayout();
+            panelSuperior.SuspendLayout();
             SuspendLayout();
             // 
             // txtNombre
@@ -128,7 +141,7 @@
             pictureBox2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             pictureBox2.BackColor = SystemColors.ButtonHighlight;
             pictureBox2.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox2.Location = new Point(893, 377);
+            pictureBox2.Location = new Point(1102, 492);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(176, 175);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -140,7 +153,7 @@
             label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
-            label3.Location = new Point(893, 350);
+            label3.Location = new Point(1102, 465);
             label3.Name = "label3";
             label3.Size = new Size(68, 23);
             label3.TabIndex = 6;
@@ -155,7 +168,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(3, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1115, 60);
+            panel2.Size = new Size(1324, 60);
             panel2.TabIndex = 8;
             // 
             // panel3
@@ -173,7 +186,7 @@
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(3, 63);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1115, 573);
+            panel3.Size = new Size(1324, 688);
             panel3.TabIndex = 9;
             // 
             // panel1
@@ -276,7 +289,7 @@
             label9.AutoSize = true;
             label9.BackColor = SystemColors.ButtonHighlight;
             label9.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label9.Location = new Point(543, 5);
+            label9.Location = new Point(464, 17);
             label9.Name = "label9";
             label9.Size = new Size(122, 28);
             label9.TabIndex = 7;
@@ -306,7 +319,7 @@
             panel4.Controls.Add(lblHp);
             panel4.Location = new Point(464, 48);
             panel4.Name = "panel4";
-            panel4.Size = new Size(621, 125);
+            panel4.Size = new Size(830, 125);
             panel4.TabIndex = 10;
             // 
             // progressBar6
@@ -480,7 +493,7 @@
             dgvPokedex.Name = "dgvPokedex";
             dgvPokedex.RowHeadersVisible = false;
             dgvPokedex.RowHeadersWidth = 51;
-            dgvPokedex.Size = new Size(355, 193);
+            dgvPokedex.Size = new Size(564, 308);
             dgvPokedex.TabIndex = 8;
             // 
             // dgvHabilidades
@@ -493,11 +506,11 @@
             dgvHabilidades.BackgroundColor = SystemColors.ButtonHighlight;
             dgvHabilidades.BorderStyle = BorderStyle.None;
             dgvHabilidades.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvHabilidades.Location = new Point(464, 214);
+            dgvHabilidades.Location = new Point(464, 224);
             dgvHabilidades.Name = "dgvHabilidades";
             dgvHabilidades.RowHeadersVisible = false;
             dgvHabilidades.RowHeadersWidth = 51;
-            dgvHabilidades.Size = new Size(355, 96);
+            dgvHabilidades.Size = new Size(564, 96);
             dgvHabilidades.TabIndex = 8;
             // 
             // label6
@@ -516,7 +529,7 @@
             label4.AutoSize = true;
             label4.BackColor = SystemColors.ButtonHighlight;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label4.Location = new Point(610, 201);
+            label4.Location = new Point(464, 193);
             label4.Name = "label4";
             label4.Size = new Size(123, 28);
             label4.TabIndex = 7;
@@ -530,7 +543,7 @@
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1129, 672);
+            tabControl1.Size = new Size(1338, 787);
             tabControl1.TabIndex = 10;
             // 
             // tabPage1
@@ -540,28 +553,123 @@
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1121, 639);
+            tabPage1.Size = new Size(1330, 754);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Búsqueda individual";
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(tableLayoutPanel2);
+            tabPage2.Controls.Add(panelSuperior);
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1121, 639);
+            tabPage2.Size = new Size(1330, 754);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Todos los pokémones";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 2;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 37.8398781F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 62.1601219F));
+            tableLayoutPanel2.Controls.Add(tableLayoutPanel1, 0, 0);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(3, 66);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 1;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.Size = new Size(1324, 685);
+            tableLayoutPanel2.TabIndex = 2;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(panelPrincipal, 0, 0);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(3, 3);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 92.64706F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 7.352941F));
+            tableLayoutPanel1.Size = new Size(495, 679);
+            tableLayoutPanel1.TabIndex = 0;
+            // 
+            // panelPrincipal
+            // 
+            panelPrincipal.BackColor = Color.Gainsboro;
+            panelPrincipal.Controls.Add(panelSecundario);
+            panelPrincipal.Dock = DockStyle.Fill;
+            panelPrincipal.Location = new Point(25, 25);
+            panelPrincipal.Margin = new Padding(25);
+            panelPrincipal.Name = "panelPrincipal";
+            panelPrincipal.Padding = new Padding(10);
+            panelPrincipal.Size = new Size(445, 579);
+            panelPrincipal.TabIndex = 0;
+            panelPrincipal.Resize += panelPrincipal_Resize;
+            // 
+            // panelSecundario
+            // 
+            panelSecundario.BackColor = Color.White;
+            panelSecundario.Dock = DockStyle.Fill;
+            panelSecundario.Location = new Point(10, 10);
+            panelSecundario.Name = "panelSecundario";
+            panelSecundario.Size = new Size(425, 559);
+            panelSecundario.TabIndex = 1;
+            panelSecundario.Resize += panelSecundario_Resize;
+            // 
+            // panelSuperior
+            // 
+            panelSuperior.BackColor = Color.ForestGreen;
+            panelSuperior.Controls.Add(button1);
+            panelSuperior.Controls.Add(textBox1);
+            panelSuperior.Controls.Add(label1);
+            panelSuperior.Dock = DockStyle.Top;
+            panelSuperior.Location = new Point(3, 3);
+            panelSuperior.Name = "panelSuperior";
+            panelSuperior.Size = new Size(1324, 63);
+            panelSuperior.TabIndex = 1;
+            panelSuperior.Resize += panelSuperior_Resize;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(451, 17);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 5;
+            button1.Text = "Buscar";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(230, 19);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(196, 27);
+            textBox1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(25, 18);
+            label1.Name = "label1";
+            label1.Size = new Size(199, 25);
+            label1.TabIndex = 3;
+            label1.Text = "Nombre del Pokémon:";
             // 
             // PokemonForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.PaleGreen;
-            ClientSize = new Size(1129, 672);
+            BackColor = SystemColors.ButtonFace;
+            ClientSize = new Size(1338, 787);
             Controls.Add(tabControl1);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "PokemonForm";
             Text = "Form1";
             Load += Form1_Load;
@@ -579,6 +687,12 @@
             ((System.ComponentModel.ISupportInitialize)dgvHabilidades).EndInit();
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
+            tabPage2.ResumeLayout(false);
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
+            panelPrincipal.ResumeLayout(false);
+            panelSuperior.ResumeLayout(false);
+            panelSuperior.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -627,5 +741,13 @@
         private Label numAt;
         private Label numHp;
         private Panel panel1;
+        private Panel panelSuperior;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Panel panelPrincipal;
+        private Button button1;
+        private TextBox textBox1;
+        private Label label1;
+        private TableLayoutPanel tableLayoutPanel2;
+        private Panel panelSecundario;
     }
 }

@@ -85,6 +85,7 @@
             MainMenuStrip = menuPrincipal;
             Name = "Principal";
             Text = "Principal";
+            WindowState = FormWindowState.Maximized;
             menuPrincipal.ResumeLayout(false);
             menuPrincipal.PerformLayout();
             ResumeLayout(false);

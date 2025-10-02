@@ -34,6 +34,25 @@ namespace PrimeraVezConAPIs
             ModificacionInterfaz.RedondearLabel(lblNombre,5);
             lblNombre.BackColor = Color.Yellow;
             lblNombre.AutoSize = true;
+
+            ModificacionInterfaz.RedondearPanel(panelPrincipal);
+            ModificacionInterfaz.RedondearPanel(panelSecundario);
+            ModificacionInterfaz.RedondearPanelArriba(panelSuperior);
+        }
+
+        private void panelPrincipal_Resize(object r, EventArgs e)
+        {
+            ModificacionInterfaz.RedondearPanel(panelPrincipal);
+        }
+
+        private void panelSuperior_Resize(object r, EventArgs e)
+        {
+            ModificacionInterfaz.RedondearPanelArriba(panelSuperior);
+        }
+
+        private void panelSecundario_Resize(object r, EventArgs e)
+        {
+            ModificacionInterfaz.RedondearPanelArriba(panelSecundario);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
